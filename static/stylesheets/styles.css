@@ -112,37 +112,13 @@ header {
 
 header ul {
   list-style:none;
-  height:40px;
   padding:0;
-  background: #f4f4f4;
-  border-radius:5px;
-  border:1px solid #e0e0e0;
-  width:270px;
-}
-
-header li {
-  width:89px;
-  float:left;
-  border-right:1px solid #e0e0e0;
-  height:40px;
-}
-
-header li:first-child a {
-  border-radius:5px 0 0 5px;
-}
-
-header li:last-child a {
-  border-radius:0 5px 5px 0;
 }
 
 header ul a {
   line-height:1;
   font-size:11px;
   color:#999;
-  display:block;
-  text-align:center;
-  padding-top:6px;
-  height:34px;
 }
 
 header ul a:hover {
@@ -156,11 +132,6 @@ header ul a:active {
 strong {
   color:#222;
   font-weight:500;
-}
-
-header ul li + li + li {
-  border-right:none;
-  width:89px;
 }
 
 header ul a strong {
@@ -267,4 +238,23 @@ footer {
     font-size:12pt;
     color:#444;
   }
+}
+
+.updates i {
+  /* text-indent: 1.15em !important; */
+  color: #bbb;
+}
+
+.social {
+  margin-top: 0.5rem;
+}
+
+.social li {
+  display: inline-block;
+  margin-right: 0.5em;
+}
+
+.social li a {
+  font-size: 0.93rem;
+  color: #999;
 }

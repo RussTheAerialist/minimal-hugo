@@ -1,0 +1,52 @@
+<h1>{{ .Site.Title }}</h1>
+<p>{{ .Site.Params.Slogan }}</p>
+<ul class="menu">
+	<li>blog
+		<ul class="submenu">
+		{{ range where (where .Site.Pages "Section" "post") ".IsPage" true }}
+			<li><a href="{{ .Permalink }}">{{ lower .Title }}</a></li>
+		{{ end }}
+		</ul>
+	</li>
+
+	<li>projects
+		<ul class="submenu">
+		{{ range where (where (where .Site.Pages "Section" "project") ".Title" "!=" "Projects") ".IsNode" true }}
+			<li><a href="{{ .Permalink }}">{{ lower .Title }}</a>
+				<ul class="updates">
+					{{ range .Pages }}
+					<li><a href="{{ .Permalink}}"><i>{{ .Date.Format "02 Jan 2006"}}</i> {{ lower .Title}}</a></li>
+					{{ end }}
+				</ul>
+			</li>
+		{{ end }}
+		</ul>
+	</li>
+
+	<li>additional
+		<ul class="submenu">
+			{{ range .Site.Menus.main }}
+			<li><a href="{{ .URL }}">{{ lower .Name }}</a></li>
+			{{ end }}
+		</ul>
+	</li>
+
+	<li>social
+		<ul class="social">
+		{{ range $index,$value := .Site.Params.Social}}
+		<li><a href="{{ $value }}"><i class="fab fa-{{ $index }}"></i></a></li>
+		{{ end }}
+		<li><a href="/index.xml"><i class="fa fa-rss"></i></a></li>
+		</ul>
+	</li>
+
+<!-- {{ range .Pages.GroupBy "Section" }}
+<li>{{ .Key }}
+	<ul>
+		{{ range .Pages }}
+			<li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+		{{ end }}
+	</ul>
+</li>
+{{ end }} -->
+</ul>
