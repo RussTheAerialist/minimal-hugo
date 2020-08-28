@@ -3,6 +3,6 @@
 {{ if .Param "Image" }}
 <img src="{{ .Params.Image }}" />
 {{ end }}
-<h1>{{ .Title }}</h1>
+<h1>{{ .Parent.Title }} &mdash; {{ .Title }}</h1>
 {{ .Content }}
 {{ end }}

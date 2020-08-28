@@ -101,6 +101,7 @@ th {
 
 img {
   max-width:100%;
+  border: 1px solid #444;
 }
 
 header.sidebar {
@@ -288,6 +289,7 @@ footer {
   display: block;
   grid-column: 1;
   align-self: start;
+
 }
 
 .homepage_entry .summary {
