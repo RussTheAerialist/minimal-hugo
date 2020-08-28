@@ -1,3 +1,24 @@
+{{ define "title"}}{{ .Title }} - {{ .Site.Title }}{{ end }}
 {{ define "content" }}
-This is the homepage
+{{- $posts := (where (where .Site.Pages "Type" "in" site.Params.mainSections).ByDate.Reverse "IsPage" true) -}}
+{{- $paginator := .Paginate $posts -}}
+{{ if eq $paginator.PageNumber 1 }}
+<article class="hero">
+	{{ with .GetPage "/about"}}
+	<header><h1>{{ .Title }}</h1></header>
+	{{ .Content }}
+	{{ end }}
+</article>
+{{ end }}
+<section class="homepage">
+	<header><h1>Recent Posts{{ if ne $paginator.PageNumber 1 }} - Page {{ $paginator.PageNumber }}{{ end }}</h1></header>
+{{ range $index, $element := .Paginator.Pages }}
+<article class="homepage_entry">
+	{{ partial "post.html" . }}
+</article>
+{{ end }}
+<div class="pagination">
+{{ template "_internal/pagination.html" . }}
+</div>
+</section>
 {{ end }}

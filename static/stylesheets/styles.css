@@ -103,7 +103,7 @@ img {
   max-width:100%;
 }
 
-header {
+header.sidebar {
   width:270px;
   float:left;
   position:fixed;
@@ -241,7 +241,7 @@ footer {
 }
 
 .updates i {
-  /* text-indent: 1.15em !important; */
+  padding-left: 0.93em;
   color: #bbb;
 }
 
@@ -257,4 +257,54 @@ footer {
 .social li a {
   font-size: 0.93rem;
   color: #999;
+}
+
+.homepage_entry {
+  margin-bottom: 4.86rem;
+  display: grid;
+  grid-template-columns: 38% auto;
+  gap: 0.55em 1.1em;
+  justify-items: start;
+  align-items: start;
+}
+
+.homepage_entry > * {
+}
+
+.homepage_entry header h1, .homepage_entry header h2 {
+  font-size: 17px;
+  display: inline;
+}
+
+.homepage_entry header h2:before {
+  content: "\2014\2002";
+}
+
+.homepage_entry header {
+  grid-column: 1 / span 2;
+}
+
+.homepage_entry img {
+  display: block;
+  grid-column: 1;
+  align-self: start;
+}
+
+.homepage_entry .summary {
+  margin-top: -0.4em;
+}
+
+.hero {
+}
+
+.pagination ul {
+  list-style: none;
+  padding: 0;
+  /* text-align: center; */
+  margin-top: 1.5em;
+}
+
+.pagination ul li {
+  display: inline-block;
+  margin-right: .93em;
 }

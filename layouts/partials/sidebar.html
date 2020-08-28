@@ -1,14 +1,6 @@
 <h1>{{ .Site.Title }}</h1>
 <p>{{ .Site.Params.Slogan }}</p>
 <ul class="menu">
-	<li>blog
-		<ul class="submenu">
-		{{ range where (where .Site.Pages "Section" "post") ".IsPage" true }}
-			<li><a href="{{ .Permalink }}">{{ lower .Title }}</a></li>
-		{{ end }}
-		</ul>
-	</li>
-
 	<li>projects
 		<ul class="submenu">
 		{{ range where (where (where .Site.Pages "Section" "project") ".Title" "!=" "Projects") ".IsNode" true }}
